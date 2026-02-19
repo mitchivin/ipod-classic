@@ -1,4 +1,4 @@
-# iPod Classic
+# Interactive iPod Classic
 
 Interactive iPod Classic 5th Generation for the web. Use the click wheel to browse your library and play tracks with zero dependencies.
 
