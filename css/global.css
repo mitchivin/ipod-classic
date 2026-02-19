@@ -98,7 +98,7 @@ body::before {
 .blueprint-header,
 .doodle-disclaimer {
     font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     letter-spacing: 1.2px;
     text-transform: uppercase;
@@ -135,7 +135,21 @@ body::before {
     color: rgba(0, 255, 0, 1);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .blueprint-header,
+    .doodle-disclaimer {
+        flex: 0 0 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    #ipod {
+        --base-width: min(calc(100vw - 20px), calc((100dvh - 120px) * 0.5955));
+    }
 
     .blueprint-header .secondary,
     .doodle-disclaimer .secondary {

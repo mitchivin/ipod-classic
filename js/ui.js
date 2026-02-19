@@ -1,7 +1,7 @@
 /**
  * ui.js — Menu rendering, navigation transitions, and dynamic menu generation.
  *
- * Handles the iPod Classic menu hierarchy: static menus from config,
+ * Handles the iPod menu hierarchy: static menus from config,
  * dynamically generated Artist/Album/Song lists from the library,
  * and the slide-left/slide-right transition between menu levels.
  */
