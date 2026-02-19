@@ -2,7 +2,7 @@
 
 Interactive iPod Classic 5th Generation for the web. Use the click wheel to browse your library and play tracks with zero dependencies.
 
-**[▶ Try it live](https://mitchivin.github.io/ipod/)**
+<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/f2d64edd-6027-44e3-98cd-5df21b1a0cba" />
 
 ## Overview
 
