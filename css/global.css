@@ -7,6 +7,7 @@
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
+    -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -29,7 +30,7 @@ body {
         linear-gradient(180deg, #03140f 0%, #020a08 45%, #010403 100%);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-family: 'Source Sans 3', sans-serif;
     position: relative;
@@ -71,8 +72,7 @@ body.dev-chrome-hidden {
     padding-bottom: 40px;
 }
 
-body.dev-chrome-hidden .blueprint-header,
-body.dev-chrome-hidden .doodle-disclaimer {
+body.dev-chrome-hidden .label-corner {
     display: none;
 }
 
@@ -125,7 +125,7 @@ body.app-loading #app-shell-loader {
 }
 
 .ipod-loader-text {
-    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.07em;
@@ -164,7 +164,7 @@ body.app-loading #app-shell-loader {
 
 .item.interactive {
     pointer-events: auto;
-    cursor: default;
+    cursor: pointer;
     touch-action: none;
     transition: transform 0.05s ease-in-out, filter 0.05s ease-in-out;
     will-change: transform;
@@ -184,58 +184,83 @@ body.app-loading #app-shell-loader {
     image-rendering: auto;
 }
 
-/* ── Blueprint Header & Footer ────────────────────────────── */
+/* ── Desktop Corner Labels ─────────────────────────────────── */
 
-.blueprint-header,
-.doodle-disclaimer {
-    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 18px;
+.label-corner {
+    position: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 11px;
     font-weight: 500;
     text-transform: uppercase;
-    text-align: center;
-    cursor: default;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    z-index: 1;
-    flex: 0 0 40px;
-    height: 40px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    letter-spacing: 0.15em;
     color: rgba(255, 255, 255, 0.85);
+    user-select: none;
+    z-index: 100;
 }
 
-.blueprint-header .sep,
-.doodle-disclaimer .sep {
-    color: rgba(0, 255, 0, 0.25);
+.label-top-left {
+    top: 24px;
+    left: 24px;
 }
 
-.blueprint-header a,
-.doodle-disclaimer a,
-.footer-interactive {
+.label-top-right {
+    top: 24px;
+    right: 24px;
+    text-align: right;
+}
+
+.label-bottom-left {
+    bottom: 24px;
+    left: 24px;
+}
+
+.label-bottom-right {
+    bottom: 24px;
+    right: 24px;
+    text-align: right;
+}
+
+.label-corner a {
     color: rgba(0, 255, 0, 0.7);
     text-decoration: none;
     cursor: pointer;
     transition: color 0.4s ease;
 }
 
-.blueprint-header a:hover,
-.doodle-disclaimer a:hover,
-.footer-interactive:hover {
+.label-corner a:hover {
     color: rgba(0, 255, 0, 1);
 }
 
 @media (max-width: 600px) {
     body {
         padding: 0 10px;
+        justify-content: center;
     }
 
-    .blueprint-header,
-    .doodle-disclaimer {
-        font-size: 14px;
+    .label-corner {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        line-height: 1.2;
+    }
+
+    .label-top-left,
+    .label-top-right {
+        top: 14px;
+    }
+
+    .label-top-left,
+    .label-bottom-left {
+        left: 14px;
+    }
+
+    .label-top-right,
+    .label-bottom-right {
+        right: 14px;
+    }
+
+    .label-bottom-left,
+    .label-bottom-right {
+        bottom: 14px;
     }
 
     #ipod-container {
@@ -244,10 +269,5 @@ body.app-loading #app-shell-loader {
 
     body.dev-chrome-hidden #ipod-container {
         --base-width: min(calc(100vw - 20px), calc((100dvh - 240px) * 0.5955));
-    }
-
-    .blueprint-header .secondary,
-    .doodle-disclaimer .secondary {
-        display: none;
     }
 }
