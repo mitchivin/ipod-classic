@@ -1,6 +1,6 @@
 # Interactive iPod Classic
 
-<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/d1ebf1e0-ecfe-4c90-8fbe-ea10e7c3a965" />
+<img width="1400" height="910" alt="gitipod3" src="https://github.com/user-attachments/assets/930fcecd-a967-4ebc-b521-5aa4bad7f893" />
 
 ---
 
@@ -35,7 +35,7 @@ The menu system, audio playback, and click wheel interactions were built directl
 - **Artwork Loading**: Lazy loading with placeholders for cover art.
 - **Responsive Layout**: Scales to any viewport while maintaining aspect ratio.
 
-<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/1e2cae44-cf6a-4492-b16e-b69517153d7d" />
+<img width="1400" height="910" alt="gitipod2" src="https://github.com/user-attachments/assets/3b2b86ad-ddf7-4db9-b9ef-f9ff9073ea14" />
 
 ## Project Structure
 
