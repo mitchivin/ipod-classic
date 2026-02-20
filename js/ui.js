@@ -93,7 +93,29 @@ export function resolveMenu(key) {
 
 // ── Render ────────────────────────────────────────────────────
 
-const MAX_VISIBLE = 7;
+const DEFAULT_MAX_VISIBLE = 7;
+
+function getVisibleCount(pane) {
+    const targetPane = pane || elements.menuPrimary;
+    if (!targetPane) return DEFAULT_MAX_VISIBLE;
+
+    const paneHeight = targetPane.clientHeight;
+    if (!paneHeight) return DEFAULT_MAX_VISIBLE;
+
+    const probe = document.createElement('div');
+    probe.className = 'menu-item';
+    probe.style.visibility = 'hidden';
+    probe.style.position = 'absolute';
+    probe.style.pointerEvents = 'none';
+    probe.innerHTML = '<span>Sample</span>';
+    targetPane.appendChild(probe);
+
+    const itemHeight = probe.getBoundingClientRect().height;
+    probe.remove();
+
+    if (!itemHeight) return DEFAULT_MAX_VISIBLE;
+    return Math.max(1, Math.floor(paneHeight / itemHeight));
+}
 
 export function renderMenu(targetPane) {
     if (state.isNowPlaying) {
@@ -108,16 +130,18 @@ export function renderMenu(targetPane) {
     const { title, items } = resolveMenu(state.currentMenuKey);
     elements.headerTitle.innerText = title;
 
+    const pane = targetPane || elements.menuPrimary;
+    const visibleCount = getVisibleCount(pane);
+
     // Clamp scrollOffset so the selected item stays visible
     if (state.selectedIndex < state.scrollOffset) {
         state.scrollOffset = state.selectedIndex;
-    } else if (state.selectedIndex >= state.scrollOffset + MAX_VISIBLE) {
-        state.scrollOffset = state.selectedIndex - MAX_VISIBLE + 1;
+    } else if (state.selectedIndex >= state.scrollOffset + visibleCount) {
+        state.scrollOffset = state.selectedIndex - visibleCount + 1;
     }
-    state.scrollOffset = Math.max(0, Math.min(state.scrollOffset, Math.max(0, items.length - MAX_VISIBLE)));
+    state.scrollOffset = Math.max(0, Math.min(state.scrollOffset, Math.max(0, items.length - visibleCount)));
 
-    const visible = items.slice(state.scrollOffset, state.scrollOffset + MAX_VISIBLE);
-    const pane = targetPane || elements.menuPrimary;
+    const visible = items.slice(state.scrollOffset, state.scrollOffset + visibleCount);
     pane.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
