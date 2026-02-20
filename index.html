@@ -17,10 +17,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons&display=block">
 </head>
 
-<body>
+<body class="app-loading">
   <!-- ── Header ────────────────────────────────────────────── -->
   <header class="blueprint-header">
-    <span>iPod by <a href="https://mitchivin.com/" target="_blank" rel="noopener noreferrer">Mitch Ivin</a></span>
+    <span><a href="https://doodledev.app" target="_blank" rel="noopener noreferrer">Preset 2</a></span>
+    <span class="sep">|</span>
+    <span>iPod</span>
   </header>
 
   <!-- ── Device Shell ───────────────────────────────────────── -->
@@ -28,9 +30,16 @@
     <ipod-design id="ipod-component"></ipod-design>
   </div>
 
+  <div id="app-shell-loader" aria-live="polite" aria-label="Loading iPod shell">
+    <div class="ipod-loader-box">
+      <div class="ipod-loader-spinner" aria-hidden="true"></div>
+      <div class="ipod-loader-text">BOOTING SHELL...</div>
+    </div>
+  </div>
+
   <!-- ── Footer ────────────────────────────────────────────── -->
   <footer class="doodle-disclaimer">
-    <span>Designed in <a href="https://doodledev.app" target="_blank" rel="noopener noreferrer">doodledev</a></span>
+    <span>by <a href="https://mitchivin.com/" target="_blank" rel="noopener noreferrer">Mitch Ivin</a></span>
   </footer>
 
   <script type="module" src="js/main.js"></script>

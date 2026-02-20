@@ -51,6 +51,19 @@ function assertDomReady() {
     }
 }
 
+function hideIpodLoader() {
+    const loader = document.getElementById('app-shell-loader');
+
+    document.body.classList.remove('app-loading');
+
+    if (!loader) return;
+
+    loader.classList.add('is-hidden');
+    setTimeout(() => {
+        loader.remove();
+    }, 260);
+}
+
 async function bootstrap() {
     await customElements.whenDefined('ipod-design');
     await new Promise((resolve) => requestAnimationFrame(resolve));
@@ -59,6 +72,12 @@ async function bootstrap() {
     assertDomReady();
     initPlayer();
     await initControls();
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            hideIpodLoader();
+        });
+    });
 }
 
 bootstrap().catch((error) => {

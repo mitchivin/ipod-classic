@@ -80,6 +80,69 @@ body.dev-chrome-hidden #ipod-container {
     --base-width: min(calc(100vw - 80px), calc((100dvh - 320px) * 0.5955));
 }
 
+body.app-loading #ipod-container {
+    visibility: hidden;
+}
+
+#app-shell-loader {
+    position: absolute;
+    inset: 0;
+    z-index: 20000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.24s ease;
+}
+
+#app-shell-loader.is-hidden {
+    opacity: 0;
+}
+
+body.app-loading #app-shell-loader {
+    display: flex;
+}
+
+.ipod-loader-box {
+    border: 1px solid rgba(74, 222, 128, 0.45);
+    border-radius: 10px;
+    background: rgba(3, 17, 12, 0.92);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ipod-loader-spinner {
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    border: 2px solid rgba(74, 222, 128, 0.28);
+    border-top-color: rgba(74, 222, 128, 1);
+    animation: ipodLoaderSpin 0.9s linear infinite;
+}
+
+.ipod-loader-text {
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    color: #86efac;
+    text-transform: uppercase;
+}
+
+@keyframes ipodLoaderSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 #ipod {
     position: relative;
     z-index: 1;
