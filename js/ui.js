@@ -94,6 +94,7 @@ export function resolveMenu(key) {
 // ── Render ────────────────────────────────────────────────────
 
 const DEFAULT_MAX_VISIBLE = 7;
+let cachedNaturalItemHeight = null;
 
 function getVisibleCount(pane) {
     const targetPane = pane || elements.menuPrimary;
@@ -102,20 +103,28 @@ function getVisibleCount(pane) {
     const paneHeight = targetPane.clientHeight;
     if (!paneHeight) return DEFAULT_MAX_VISIBLE;
 
-    const probe = document.createElement('div');
-    probe.className = 'menu-item';
-    probe.style.visibility = 'hidden';
-    probe.style.position = 'absolute';
-    probe.style.pointerEvents = 'none';
-    probe.innerHTML = '<span>Sample</span>';
-    targetPane.appendChild(probe);
+    if (!cachedNaturalItemHeight) {
+        const probe = document.createElement('div');
+        probe.className = 'menu-item';
+        probe.style.visibility = 'hidden';
+        probe.style.position = 'absolute';
+        probe.style.pointerEvents = 'none';
+        probe.innerHTML = '<span>Sample</span>';
+        targetPane.appendChild(probe);
 
-    const itemHeight = probe.getBoundingClientRect().height;
-    probe.remove();
+        cachedNaturalItemHeight = probe.getBoundingClientRect().height;
+        probe.remove();
+    }
 
-    if (!itemHeight) return DEFAULT_MAX_VISIBLE;
-    return Math.max(1, Math.floor(paneHeight / itemHeight));
+    if (!cachedNaturalItemHeight) return DEFAULT_MAX_VISIBLE;
+    
+    return Math.max(1, Math.round(paneHeight / cachedNaturalItemHeight));
 }
+
+// Optional: clear cache on window resize if the iPod can be resized
+window.addEventListener('resize', () => {
+    cachedNaturalItemHeight = null;
+});
 
 export function renderMenu(targetPane) {
     if (state.isNowPlaying) {
@@ -145,12 +154,16 @@ export function renderMenu(targetPane) {
     pane.innerHTML = '';
 
     const fragment = document.createDocumentFragment();
+    const itemHeight = pane.clientHeight ? (pane.clientHeight / visibleCount) : null;
+
     visible.forEach((item, i) => {
         const realIndex = i + state.scrollOffset;
         const div = document.createElement('div');
         div.className = 'menu-item'
             + (realIndex === state.selectedIndex ? ' selected' : '')
             + (item.disabled ? ' disabled' : '');
+        
+        if (itemHeight) div.style.height = `${itemHeight}px`;
 
         let right = '';
         if (item.submenu) right = '<span class="material-icons arrow">chevron_right</span>';
