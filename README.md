@@ -2,7 +2,7 @@
 
 A browser click-wheel music player with library browsing, playlists, album artwork, playback and local music import.
 
-**[Open live demo](https://mitchivindesign.github.io/mipod/) · [Explore in DoodleDev](https://doodledev.app/builds/#mipod)**
+**[Open live demo](https://mitchivindesign.github.io/mipod/) · [Download for Windows](https://github.com/mitchivin/mipod/releases/latest) · [Explore in DoodleDev](https://doodledev.app/builds/#mipod)**
 
 Works on desktop and phone. Open the live demo and start listening.
 
@@ -24,7 +24,17 @@ Works on desktop and phone. Open the live demo and start listening.
 2. Browse the library and choose a track.
 3. Use the click wheel to control playback.
 
-This repository contains public product information. The application source is not published here.
+## Desktop widget for Windows
+
+MiPod Classic also runs as a small desktop widget: just the device, sitting on your desktop.
+
+1. Download the **setup installer** from [Releases](https://github.com/mitchivin/mipod/releases/latest) and run it.
+2. The installer isn't signed, so Windows may show "Windows protected your PC". Click **More info**, then **Run anyway**.
+3. The widget starts with an empty library. Use **Import Music** to add your own songs.
+
+Drag the device to move it. The tray icon shows or quits it.
+
+This repository contains public product information and release downloads. The application source is not published here.
 
 ## Related
 
