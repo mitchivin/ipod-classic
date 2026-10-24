@@ -4,7 +4,7 @@ A click-wheel music player. Play it in your browser, or install it as a desktop 
 
 **[Download for Windows](https://github.com/mitchivin/ipod-classic/releases/latest) · [Open live demo](https://mitchivindesign.github.io/ipod-classic/) · [Explore in DoodleDev](https://doodledev.app/builds/#ipod-classic)**
 
-Current release: **0.0.28**. iPod Classic is free to use.
+Current release: **0.0.29**. iPod Classic is free to use.
 
 ![iPod Classic Now Playing](assets/ipod-classic-playing-device-1920x1080.webp)
 
