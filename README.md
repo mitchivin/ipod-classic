@@ -1,12 +1,12 @@
-# MiPod Classic
+# iPod Classic
 
 A click-wheel music player. Play it in your browser, or install it as a desktop widget on Windows.
 
-**[Download for Windows](https://github.com/mitchivin/mipod/releases/latest) · [Open live demo](https://mitchivindesign.github.io/mipod/) · [Explore in DoodleDev](https://doodledev.app/builds/#mipod)**
+**[Download for Windows](https://github.com/mitchivin/ipod-classic/releases/latest) · [Open live demo](https://mitchivindesign.github.io/ipod-classic/) · [Explore in DoodleDev](https://doodledev.app/builds/#ipod-classic)**
 
-Current release: **0.0.28**. MiPod Classic is free to use.
+Current release: **0.0.28**. iPod Classic is free to use.
 
-![MiPod Classic Now Playing](assets/mipod-playing-device-1920x1080.webp)
+![iPod Classic Now Playing](assets/ipod-classic-playing-device-1920x1080.webp)
 
 ## Features
 
@@ -17,19 +17,19 @@ Current release: **0.0.28**. MiPod Classic is free to use.
 - **Desktop widget.** On Windows it's just the device on your desktop: a see-through window you drag anywhere, with a tray icon and Always on Top.
 - **Live demo.** The browser version comes with a demo library and works on desktop and phone.
 
-![MiPod Classic menu](assets/mipod-menu-device-1920x1080.webp)
+![iPod Classic menu](assets/ipod-classic-menu-device-1920x1080.webp)
 
 ## Get started
 
 ### Windows desktop widget
 
-1. Download the **Setup installer** from [Releases](https://github.com/mitchivin/mipod/releases/latest) and run it.
+1. Download the **Setup installer** from [Releases](https://github.com/mitchivin/ipod-classic/releases/latest) and run it.
 2. The installer isn't signed, so Windows may show "Windows protected your PC". Click **More info**, then **Run anyway**.
 3. The widget starts with an empty library. Choose **Import Music** to add your songs.
 
 ### Browser
 
-1. Open the [MiPod Classic live demo](https://mitchivindesign.github.io/mipod/).
+1. Open the [iPod Classic live demo](https://mitchivindesign.github.io/ipod-classic/).
 2. Browse the library and choose a track.
 3. Use the click wheel to control playback.
 
@@ -45,6 +45,6 @@ This repository contains public product information and release downloads. The a
 
 Built by [Mitch Ivin](https://mitchivin.com/) in [DoodleDev](https://doodledev.app/).
 
-MiPod Classic is an independent creative project and is not affiliated with Apple.
+iPod Classic is an independent creative project and is not affiliated with Apple.
 
 Screenshots captured at 1920 × 1080.
