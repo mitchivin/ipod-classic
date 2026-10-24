@@ -38,7 +38,7 @@ This repository contains public product information and release downloads. The a
 ## Related
 
 - [DoodleDev](https://doodledev.app/)
-- [Mi Boy Color](https://github.com/mitchivin/miboy)
+- [Game Boy Color](https://github.com/mitchivin/game-boy-color)
 - [MitchIvin XP](https://mitchivin.com/)
 
 ## About
