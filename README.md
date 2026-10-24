@@ -2,7 +2,7 @@
 
 A click-wheel music player. Play it in your browser, or install it as a desktop widget on Windows.
 
-**[Download for Windows](https://github.com/mitchivin/ipod-classic/releases/latest) · [Open live demo](https://mitchivindesign.github.io/ipod-classic/) · [Explore in DoodleDev](https://doodledev.app/builds/#ipod-classic)**
+**[Download for Windows](https://github.com/mitchivin/ipod-classic/releases/latest) · [Open live demo](https://mitchivin.github.io/ipod-classic/) · [Explore in DoodleDev](https://doodledev.app/builds/#ipod-classic)**
 
 Current release: **0.0.29**. iPod Classic is free to use.
 
@@ -29,7 +29,7 @@ Current release: **0.0.29**. iPod Classic is free to use.
 
 ### Browser
 
-1. Open the [iPod Classic live demo](https://mitchivindesign.github.io/ipod-classic/).
+1. Open the [iPod Classic live demo](https://mitchivin.github.io/ipod-classic/).
 2. Browse the library and choose a track.
 3. Use the click wheel to control playback.
 
@@ -38,6 +38,7 @@ This repository contains public product information and release downloads. The a
 ## Related
 
 - [DoodleDev](https://doodledev.app/)
+- [iPod Original](https://github.com/mitchivin/ipod-original)
 - [Game Boy Color](https://github.com/mitchivin/game-boy-color)
 - [MitchIvin XP](https://mitchivin.com/)
 
